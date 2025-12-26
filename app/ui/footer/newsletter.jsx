@@ -11,7 +11,7 @@ export default function Newsletter() {
                     <p className="text-black-500 text-regular">We love to surprise our subscribers with occasional gifts.</p>
                 </div>
                 <div className='flex gap-4'>
-                    <Input placeholder='Your email address' inputType='email' /> 
+                    <Input/>
                     <Button>Subscribe</Button>
                 </div>
             </div>

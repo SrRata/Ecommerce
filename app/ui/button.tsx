@@ -1,19 +1,19 @@
 import React from 'react';
 
 interface ButtonProps {
-    type?: 'default' | 'outline' | 'outlineBlack' | 'white';
-    size?: 'normal' | 'small';
-    children: React.ReactNode;
+    style?: 'default' | 'outline' | 'outlineBlack' | 'white'; //Decide el estilo de boton, por defecto es default. 
+    size?: 'normal' | 'small'; //Decide que verion usar entre la normal y small, por defecto esta en normal.
+    children: React.ReactNode;  //Valor que tiene el button.
 }
 
-const getClassName = (type: string, size: string) => {
+const getClassName = (style: string, size: string) => {
     let base = "capitalize rounded-sm text-medium";
     let bg = "";
     let text = "";
     let border = "";
-    let padding = size === 'small' ? "py-3 px-5" : "py-3 px-6";
+    let padding = size === 'small' ? "py-2.5 px-5" : "py-2.5 px-6";
 
-    switch (type) {
+    switch (style) {
         case 'default':
             bg = "bg-black-900";
             text = "text-white-900";
@@ -39,9 +39,9 @@ const getClassName = (type: string, size: string) => {
     return `${base} ${bg} ${padding} ${text} ${border}`;
 };
 
-export default function Button({ type = 'default', size = 'normal', children }: ButtonProps) {
+export default function Button({ style = 'default', size = 'normal', children }: ButtonProps) {
     return (
-        <button className={getClassName(type, size)}>
+        <button className={getClassName(style, size)}>
             {children}
         </button>
     );
