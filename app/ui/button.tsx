@@ -1,17 +1,14 @@
-import React from 'react';
-
 interface ButtonProps {
-    style?: 'default' | 'outline' | 'outlineBlack' | 'white'; //Decide el estilo de boton, por defecto es default. 
-    size?: 'normal' | 'small'; //Decide que verion usar entre la normal y small, por defecto esta en normal.
-    children: React.ReactNode;  //Valor que tiene el button.
+    style?: 'default' | 'outline' | 'outlineBlack' | 'white'
+    type?: 'button' | 'submit' | 'reset'
+    content?: string
 }
 
-const getClassName = (style: string, size: string) => {
-    let base = "capitalize rounded-sm text-medium";
+const getClassName = (style: string) => {
+    let base = "cursor-pointer capitalize rounded-sm text-medium py-2.5 px-6";
     let bg = "";
     let text = "";
     let border = "";
-    let padding = size === 'small' ? "py-2.5 px-5" : "py-2.5 px-6";
 
     switch (style) {
         case 'default':
@@ -20,29 +17,27 @@ const getClassName = (style: string, size: string) => {
             border = "border border-black-900";
             break;
         case 'outline':
-            bg = "bg-white-900";
+            bg = "";
             text = "text-black-500";
             border = "border border-black-200";
             break;
         case 'outlineBlack':
-            bg = "bg-white-900";
+            bg = "";
             text = "text-black-900";
             border = "border border-black-900";
             break;
         case 'white':
-            bg = "bg-white-900";
+            bg = "";
             text = "text-black-900";
-            border = "border border-white-900";
+            border = "";
             break;
     }
 
-    return `${base} ${bg} ${padding} ${text} ${border}`;
+    return `${base} ${bg} ${text} ${border}`;
 };
 
-export default function Button({ style = 'default', size = 'normal', children }: ButtonProps) {
+export default function Button({style = 'default', content = 'button', type = 'button'} : ButtonProps) {
     return (
-        <button className={getClassName(style, size)}>
-            {children}
-        </button>
-    );
+        <button className={getClassName(style)} type={type}>{content}</button>
+    )
 }

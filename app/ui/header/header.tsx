@@ -31,9 +31,7 @@ export default function Header(){
 
                 <nav className="flex gap-8 items-center text-black-500 text-medium">
 
-                <div> 
-                    <Input placeholder="Search products" icon="/icons/Search.svg"/>
-                </div>
+                <Input placeholder="Search products" icon="/icons/Search.svg"/>
 
                 <img src="/icons/Cart.svg" alt="Cart icon" className="cursor-pointer"/>
                 <img src="/icons/User.svg" alt="User icon" className="cursor-pointer"/>

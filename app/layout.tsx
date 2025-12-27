@@ -1,6 +1,7 @@
-import { Montserrat } from "next/font/google";
 import "./globals.css";
 import React from "react";
+
+import { Montserrat } from "next/font/google";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -8,14 +9,10 @@ const montserrat = Montserrat({
   weight: ["300", "400", "500", "600", "700"],
 });
 
-
-
 import NotificationBar from "./ui/header/notification-bar";
 import Header from "./ui/header/header";
-import Footer from "./ui/footer/footer"; 
 import Newsletter from "./ui/footer/newsletter"
-
-
+import Footer from "./ui/footer/footer";
 
 export default function RootLayout({
   children,

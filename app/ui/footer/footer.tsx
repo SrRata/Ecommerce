@@ -2,7 +2,7 @@ import LinkFooter from "./link-footer"
 
 export default function Footer() {
     return (
-        <footer className="bg-white-100">
+        <footer className="bg-white-900">
             <section className="max-w-container mx-auto px-3 grid grid-cols-7 gap-10 py-20">
 
                 <div className="flex flex-col gap-6 col-span-2 items-start">
